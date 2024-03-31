@@ -13,12 +13,11 @@ public class RandomiteMod implements ModInitializer, GameStartEntrypoint, Recipe
     @Override
     public void onInitialize() {
 		new RandomiteBlocks().initializeBlocks();
-        LOGGER.info("Randomite initialized.");
     }
 
 	@Override
 	public void beforeGameStart() {
-
+		LOGGER.info("Randomite initialized.");
 	}
 
 	@Override
