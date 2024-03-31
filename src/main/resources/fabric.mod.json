@@ -19,20 +19,17 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-			"turniplabs.examplemod.ExampleMod"
+      "luke.randomite.RandomiteMod"
     ],
 		"beforeGameStart": [
-			"turniplabs.examplemod.ExampleMod"
+          "luke.randomite.RandomiteMod"
 		],
 		"afterGameStart": [
-			"turniplabs.examplemod.ExampleMod"
-		],
-		"recipesReady": [
-			"turniplabs.examplemod.ExampleMod"
+          "luke.randomite.RandomiteMod"
 		]
 	},
   "mixins": [
-      "examplemod.mixins.json"
+		"randomite.mixins.json"
   ],
 
   "depends": {
