@@ -29,4 +29,9 @@ public class RandomiteMod implements ModInitializer, GameStartEntrypoint, Recipe
 	public void onRecipesReady() {
 
 	}
+
+	@Override
+	public void initNamespaces() {
+
+	}
 }

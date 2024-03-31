@@ -37,16 +37,16 @@ public class RandomiteBlocks {
 		// Randomite Ores
 		oreRandomiteStone = ore
 			.setTextures("randomitestone.png")
-			.build(new BlockOreRandomite("ore.randomite.stone", blockID("oreCopperStone")));
+			.build(new BlockOreRandomite("ore.randomiteore.stone", blockID("oreRandomiteStone")));
 		oreRandomiteBasalt = ore
 			.setTextures("randomitebasalt.png")
-			.build(new BlockOreRandomite("ore.randomite.basalt", blockID("oreCopperBasalt")));
+			.build(new BlockOreRandomite("ore.randomiteore.basalt", blockID("oreRandomiteBasalt")));
 		oreRandomiteLimestone = ore
 			.setTextures("randomitelimestone.png")
-			.build(new BlockOreRandomite("ore.randomite.limestone", blockID("oreCopperLimestone")));
+			.build(new BlockOreRandomite("ore.randomiteore.limestone", blockID("oreRandomiteLimestone")));
 		oreRandomiteGranite = ore
 			.setTextures("randomitegranite.png")
-			.build(new BlockOreRandomite("ore.randomite.granite", blockID("oreCopperGranite")));
+			.build(new BlockOreRandomite("ore.randomiteore.granite", blockID("oreRandomiteGranite")));
 
 
 		initializeBlockDetails();
