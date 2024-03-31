@@ -2,6 +2,7 @@ package luke.randomite;
 
 import net.minecraft.core.block.Block;
 import net.minecraft.core.block.tag.BlockTags;
+import net.minecraft.core.data.registry.Registries;
 import net.minecraft.core.item.tool.ItemToolPickaxe;
 import net.minecraft.core.sound.BlockSound;
 import turniplabs.halplibe.helper.BlockBuilder;
@@ -30,6 +31,9 @@ public class RandomiteBlocks {
 		CreativeHelper.setParent(oreRandomiteBasalt, Block.oreCoalGranite);
 		CreativeHelper.setParent(oreRandomiteLimestone, Block.oreCoalGranite);
 		CreativeHelper.setParent(oreRandomiteGranite, Block.oreCoalGranite);
+
+		Registries.ITEM_GROUPS.register("randomite:randomite_ores", Registries.stackListOf(oreRandomiteStone, oreRandomiteBasalt, oreRandomiteLimestone, oreRandomiteGranite));
+
 	}
 
 	public void initializeBlocks() {
