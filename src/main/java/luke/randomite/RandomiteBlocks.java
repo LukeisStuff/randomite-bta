@@ -5,6 +5,7 @@ import net.minecraft.core.block.tag.BlockTags;
 import net.minecraft.core.item.tool.ItemToolPickaxe;
 import net.minecraft.core.sound.BlockSound;
 import turniplabs.halplibe.helper.BlockBuilder;
+import turniplabs.halplibe.helper.CreativeHelper;
 
 import static luke.randomite.RandomiteMod.MOD_ID;
 
@@ -24,6 +25,11 @@ public class RandomiteBlocks {
 		ItemToolPickaxe.miningLevels.put(oreRandomiteBasalt, 1);
 		ItemToolPickaxe.miningLevels.put(oreRandomiteLimestone, 1);
 		ItemToolPickaxe.miningLevels.put(oreRandomiteGranite, 1);
+
+		CreativeHelper.setParent(oreRandomiteStone, Block.oreCoalGranite);
+		CreativeHelper.setParent(oreRandomiteBasalt, Block.oreCoalGranite);
+		CreativeHelper.setParent(oreRandomiteLimestone, Block.oreCoalGranite);
+		CreativeHelper.setParent(oreRandomiteGranite, Block.oreCoalGranite);
 	}
 
 	public void initializeBlocks() {
