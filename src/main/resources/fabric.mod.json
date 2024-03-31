@@ -1,19 +1,19 @@
 {
   "schemaVersion": 1,
-  "id": "examplemod",
+  "id": "randomite",
   "version": "${version}",
 
-  "name": "Example Mod",
-  "description": "This mod aims to help new BTA modders.",
+  "name": "Randomite",
+  "description": "Adds in a new ore that gives out random items.",
   "authors": [
-    "Turnip Labs"
+    "LukeisStuff"
   ],
+	"icon": "icon.png",
   "contact": {
     "homepage": "",
     "sources": ""
   },
 
-	"icon": "icon.png",
   "license": "CC0-1.0",
 
   "environment": "*",
@@ -26,6 +26,9 @@
 		],
 		"afterGameStart": [
           "luke.randomite.RandomiteMod"
+		],
+		"terrain-api": [
+			"luke.randomite.ModContainer.TerrainApi.TerrainApiPlugin"
 		]
 	},
   "mixins": [
