@@ -22,7 +22,7 @@ public class RandomiteMod implements ModInitializer, GameStartEntrypoint, Recipe
 
 	@Override
 	public void afterGameStart() {
-
+		new RandomiteBlocks().initializeBlockDetails();
 	}
 
 	@Override

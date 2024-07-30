@@ -12,10 +12,10 @@ import java.util.stream.Collectors;
 
 public class RandomiteConfig {
 	public static ConfigUpdater updater = ConfigUpdater.fromProperties();
-	private static final Toml properties = new Toml("Randomite TOML Config");
+	public static final Toml properties = new Toml("Randomite TOML Config");
 	public static TomlConfigHandler cfg;
 
-	private static int blockIDs = 2500;
+	public static int blockIDs = 2500;
 
 
 	static {

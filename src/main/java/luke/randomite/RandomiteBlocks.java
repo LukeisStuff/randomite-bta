@@ -13,7 +13,7 @@ import static luke.randomite.RandomiteMod.MOD_ID;
 
 public class RandomiteBlocks {
 
-	private int blockID(String blockName) {
+	public int blockID(String blockName) {
 		return RandomiteConfig.cfg.getInt("Block IDs." + blockName);
 	}
 
@@ -22,7 +22,7 @@ public class RandomiteBlocks {
 	public static Block oreRandomiteLimestone;
 	public static Block oreRandomiteGranite;
 
-	private void initializeBlockDetails() {
+	public void initializeBlockDetails() {
 		ItemToolPickaxe.miningLevels.put(oreRandomiteStone, 1);
 		ItemToolPickaxe.miningLevels.put(oreRandomiteBasalt, 1);
 		ItemToolPickaxe.miningLevels.put(oreRandomiteLimestone, 1);
@@ -58,8 +58,5 @@ public class RandomiteBlocks {
 		oreRandomiteGranite = ore
 			.setBlockModel(block -> new BlockModelStandard<>(block).withTextures("randomite:block/randomitegranite"))
 			.build(new BlockOreRandomite("ore.randomiteore.granite", blockID("oreRandomiteGranite")));
-
-
-		initializeBlockDetails();
 	}
 }
