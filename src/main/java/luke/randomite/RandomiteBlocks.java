@@ -1,5 +1,6 @@
 package luke.randomite;
 
+import net.minecraft.client.render.block.model.BlockModelStandard;
 import net.minecraft.core.block.Block;
 import net.minecraft.core.block.tag.BlockTags;
 import net.minecraft.core.data.registry.Registries;
@@ -46,16 +47,16 @@ public class RandomiteBlocks {
 
 		// Randomite Ores
 		oreRandomiteStone = ore
-			.setTextures("randomitestone.png")
+			.setBlockModel(block -> new BlockModelStandard<>(block).withTextures("randomite:block/randomitestone"))
 			.build(new BlockOreRandomite("ore.randomiteore.stone", blockID("oreRandomiteStone")));
 		oreRandomiteBasalt = ore
-			.setTextures("randomitebasalt.png")
+			.setBlockModel(block -> new BlockModelStandard<>(block).withTextures("randomite:block/randomitebasalt"))
 			.build(new BlockOreRandomite("ore.randomiteore.basalt", blockID("oreRandomiteBasalt")));
 		oreRandomiteLimestone = ore
-			.setTextures("randomitelimestone.png")
+			.setBlockModel(block -> new BlockModelStandard<>(block).withTextures("randomite:block/randomitelimestone"))
 			.build(new BlockOreRandomite("ore.randomiteore.limestone", blockID("oreRandomiteLimestone")));
 		oreRandomiteGranite = ore
-			.setTextures("randomitegranite.png")
+			.setBlockModel(block -> new BlockModelStandard<>(block).withTextures("randomite:block/randomitegranite"))
 			.build(new BlockOreRandomite("ore.randomiteore.granite", blockID("oreRandomiteGranite")));
 
 

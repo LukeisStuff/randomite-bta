@@ -25,9 +25,9 @@ public class BlockOreRandomite extends Block {
 				return new ItemStack[]{new ItemStack(this)};
 			case EXPLOSION:
 			case PROPER_TOOL:
-				if (random > 0 && random < 30) {
+				if (random <= 30) {
 					return new ItemStack[]{new ItemStack(Item.eggChicken, 1)};
-				} else if (random > 30 && random < 50) {
+				} else if (random > 31 && random < 50) {
 					return new ItemStack[]{new ItemStack(Item.coal, 1)};
 				} else if (random > 50 && random < 60) {
 					return new ItemStack[]{new ItemStack(Item.oreRawIron, 1)};
@@ -39,7 +39,7 @@ public class BlockOreRandomite extends Block {
 					return new ItemStack[]{new ItemStack(Item.dustRedstone, 1+ world.rand.nextInt(2))};
 				} else if (random > 90 && random < 95) {
 					return new ItemStack[]{new ItemStack(Item.diamond, 1)};
-				} else if (random > 95 && random < 99) {
+				} else if (random > 95) {
 					return new ItemStack[]{new ItemStack(Item.ingotSteelCrude, 1)};
 				}
 			default:
