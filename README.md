@@ -11,10 +11,9 @@
 
 ## Requirements
 
-+ BTA 7.1
++ BTA 7.3_04
 + Babric
 + Halplibe
-+ Terrain API
 
 ## Instructions
 
