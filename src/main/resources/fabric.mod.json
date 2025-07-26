@@ -22,13 +22,13 @@
       "luke.randomite.RandomiteMod"
     ],
 		"beforeGameStart": [
-          "luke.randomite.RandomiteMod"
+			"luke.randomite.RandomiteMod"
 		],
 		"afterGameStart": [
-          "luke.randomite.RandomiteMod"
+			"luke.randomite.RandomiteMod"
 		],
-		"terrain-api": [
-			"luke.randomite.ModContainer.TerrainApi.TerrainApiPlugin"
+		"initModels": [
+			"luke.randomite.RandomiteModels"
 		]
 	},
   "mixins": [
