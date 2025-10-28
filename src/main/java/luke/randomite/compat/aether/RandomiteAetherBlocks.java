@@ -1,5 +1,6 @@
 package luke.randomite.compat.aether;
 
+import luke.randomite.RandomiteConfig;
 import net.minecraft.core.block.Block;
 import net.minecraft.core.block.material.Material;
 import net.minecraft.core.block.tag.BlockTags;
@@ -23,10 +24,6 @@ public class RandomiteAetherBlocks {
 		}
 	}
 
-	public void initializeBlockDetails() {
-		ItemToolPickaxeAether.miningLevels.put(ORE_RANDOMITE_HOLYSTONE, 1);
-	}
-
 	public static void initializeBlocks() {
 
 		BlockBuilder ore = new BlockBuilder(AetherMod.MOD_ID)
@@ -36,7 +33,8 @@ public class RandomiteAetherBlocks {
 
 		// Aether Randomite Ores
 		ORE_RANDOMITE_HOLYSTONE = ore
-			.build("ore.randomite.holystone", "ore_randomite_holystone", 15005, block -> new BlockLogicOreRandomiteAether(block, AetherBlocks.HOLYSTONE, Material.marble));
+			.build("ore.randomite.holystone", "ore_randomite_holystone", RandomiteConfig.blockID("ORE_RANDOMITE_HOLYSTONE"), block -> new BlockLogicOreRandomiteAether(block, AetherBlocks.HOLYSTONE, Material.marble));
 
+		ItemToolPickaxeAether.miningLevels.put(ORE_RANDOMITE_HOLYSTONE, 1);
 	}
 }

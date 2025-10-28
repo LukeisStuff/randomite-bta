@@ -42,20 +42,20 @@ public class RandomiteBlocks {
 			.setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.0f))
 			.setHardness(3.0f)
 			.setResistance(5.0f)
-			.setTags(BlockTags.MINEABLE_BY_PICKAXE);
+			.setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.CHAINLINK_FENCES_CONNECT);
 
 		// Randomite Ores
 		ORE_RANDOMITE_STONE = ore
-			.build("ore.randomite.stone", "ore_randomite_stone", 15000, block -> new BlockLogicOreRandomite(block, Blocks.STONE, Material.stone));
+			.build("ore.randomite.stone", "ore_randomite_stone", RandomiteConfig.blockID("ORE_RANDOMITE_STONE"), block -> new BlockLogicOreRandomite(block, Blocks.STONE, Material.stone));
 		ORE_RANDOMITE_BASALT = ore
-			.build("ore.randomite.basalt", "ore_randomite_basalt", 15001, block -> new BlockLogicOreRandomite(block, Blocks.BASALT, Material.basalt));
+			.build("ore.randomite.basalt", "ore_randomite_basalt", RandomiteConfig.blockID("ORE_RANDOMITE_BASALT"), block -> new BlockLogicOreRandomite(block, Blocks.BASALT, Material.basalt));
 		ORE_RANDOMITE_LIMESTONE = ore
-			.build("ore.randomite.limestone", "ore_randomite_limestone", 15002, block -> new BlockLogicOreRandomite(block, Blocks.LIMESTONE, Material.limestone));
+			.build("ore.randomite.limestone", "ore_randomite_limestone", RandomiteConfig.blockID("ORE_RANDOMITE_LIMESTONE"), block -> new BlockLogicOreRandomite(block, Blocks.LIMESTONE, Material.limestone));
 		ORE_RANDOMITE_GRANITE = ore
-			.build("ore.randomite.granite", "ore_randomite_granite", 15003, block -> new BlockLogicOreRandomite(block, Blocks.GRANITE, Material.granite));
+			.build("ore.randomite.granite", "ore_randomite_granite", RandomiteConfig.blockID("ORE_RANDOMITE_GRANITE"), block -> new BlockLogicOreRandomite(block, Blocks.GRANITE, Material.granite));
 		ORE_RANDOMITE_PERMAFROST = ore
 			.setBlockSound(BlockSounds.PERMAFROST)
-			.build("ore.randomite.permafrost", "ore_randomite_permafrost", 15004, block -> new BlockLogicOreRandomite(block, Blocks.PERMAFROST, Material.permafrost));
+			.build("ore.randomite.permafrost", "ore_randomite_permafrost", RandomiteConfig.blockID("ORE_RANDOMITE_PERMAFROST"), block -> new BlockLogicOreRandomite(block, Blocks.PERMAFROST, Material.permafrost));
 
 	}
 }

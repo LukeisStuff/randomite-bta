@@ -14,7 +14,8 @@ public class RandomiteModels implements ModelEntrypoint {
 	public void initBlockModels(BlockModelDispatcher dispatcher) {
 
 		dispatcher.addDispatch(new BlockModelStandard<>(RandomiteBlocks.ORE_RANDOMITE_STONE)
-			.setAllTextures(0, "randomite:block/ore/randomite/stone"));
+			.setAllTextures(0, "randomite:block/ore/randomite/stone")
+			.setAllTextures(2, "randomite:block/ore/randomite/stone_retro"));
 		dispatcher.addDispatch(new BlockModelStandard<>(RandomiteBlocks.ORE_RANDOMITE_BASALT)
 			.setAllTextures(0, "randomite:block/ore/randomite/basalt"));
 		dispatcher.addDispatch(new BlockModelStandard<>(RandomiteBlocks.ORE_RANDOMITE_LIMESTONE)
