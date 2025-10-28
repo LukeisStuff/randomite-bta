@@ -119,11 +119,8 @@ dependencies {
 
 	modImplementation("turniplabs:modmenu-bta:$mod_menu_version")
 
-	modImplementation ("com.github.MartinSVK12:catalyst:7.3-SNAPSHOT")
-	modImplementation ("com.github.Olypolyu:catalyst:heart_containers-SNAPSHOT")
-
-//	modImplementation("sunsetsatellite:catalyst-core:${catalystcore_version}")
-//	modImplementation("sunsetsatellite:catalyst-effects:${catalysteffects_version}")
+	modImplementation("sunsetsatellite:catalyst-core:${catalystcore_version}")
+	modImplementation("sunsetsatellite:catalyst-effects:${catalysteffects_version}")
 	modImplementation("gungun974:UselessNumerical:${uselessnumerical_version}")
 
 	val bwaImport = "com.github.bta-team-port:better-with-aether:${bwa_version}"

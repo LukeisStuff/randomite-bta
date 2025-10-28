@@ -2,14 +2,13 @@ package luke.randomite;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import teamport.aether.AetherMod;
 import turniplabs.halplibe.util.TomlConfigHandler;
 import turniplabs.halplibe.util.toml.Toml;
 
 import java.io.IOException;
 
 public class RandomiteConfig {
-	public static final Logger LOGGER = LoggerFactory.getLogger(AetherMod.MOD_ID);
+	public static final Logger LOGGER = LoggerFactory.getLogger(RandomiteMod.MOD_ID);
 
 	private static TomlConfigHandler cfg;
 
@@ -22,10 +21,10 @@ public class RandomiteConfig {
 	static void Setup() {
 		LOGGER.info("Initializing config..");
 
-		Toml props = new Toml("Aether Configs.toml");
+		Toml props = new Toml("Randomite Configs.toml");
 		assembleProperties(props);
 
-		cfg = new TomlConfigHandler(AetherMod.MOD_ID, props);
+		cfg = new TomlConfigHandler(RandomiteMod.MOD_ID, props);
 
 		if (cfg.getConfigFile().exists()) cfg.loadConfig();
 		else {

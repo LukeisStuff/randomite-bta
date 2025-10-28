@@ -10,8 +10,6 @@ import teamport.aether.blocks.AetherBlocks;
 import teamport.aether.items.itemtool.ItemToolPickaxeAether;
 import turniplabs.halplibe.helper.BlockBuilder;
 
-import static luke.randomite.RandomiteConfig.blockID;
-
 public class RandomiteAetherBlocks {
 
 	public static Block<?> ORE_RANDOMITE_HOLYSTONE;
@@ -38,7 +36,7 @@ public class RandomiteAetherBlocks {
 
 		// Aether Randomite Ores
 		ORE_RANDOMITE_HOLYSTONE = ore
-			.build("ore.randomite.holystone", "ore_randomite_holystone", blockID("ORE_RANDOMITE_HOLYSTONE"), block -> new BlockLogicOreRandomiteAether(block, AetherBlocks.HOLYSTONE, Material.marble));
+			.build("ore.randomite.holystone", "ore_randomite_holystone", 15005, block -> new BlockLogicOreRandomiteAether(block, AetherBlocks.HOLYSTONE, Material.marble));
 
 	}
 }

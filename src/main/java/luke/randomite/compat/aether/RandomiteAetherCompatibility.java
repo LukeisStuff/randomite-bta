@@ -62,7 +62,6 @@ public class RandomiteAetherCompatibility implements PreLaunchEntrypoint, GameSt
 
 	@Override
 	public void afterGameStart() {
-		new RandomiteAetherBlocks().initializeBlockDetails();
 	}
 
 	@Override
