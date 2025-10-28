@@ -1,51 +1,90 @@
 package luke.randomite;
 
-import net.minecraft.core.block.Block;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import teamport.aether.AetherMod;
 import turniplabs.halplibe.util.TomlConfigHandler;
 import turniplabs.halplibe.util.toml.Toml;
 
 import java.io.IOException;
-import java.lang.reflect.Field;
-import java.util.Arrays;
-import java.util.List;
-import java.util.stream.Collectors;
-
-import static luke.randomite.RandomiteMod.MOD_ID;
 
 public class RandomiteConfig {
-	public static final Toml properties = new Toml("Randomite Configs.toml \n[!] Be careful with IDs. Changes can affect your existing worlds.");
-	public static TomlConfigHandler cfg;
+	public static final Logger LOGGER = LoggerFactory.getLogger(AetherMod.MOD_ID);
 
-	public static int blockIDs = 2500;
+	private static TomlConfigHandler cfg;
 
-	public static String BlockIDs = "Block IDs";
-	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
+	public static final String GeneralCategory = "General";
 
+	private static int BLOCK_ID_STARTING_FROM = 2500;
+
+	public static int currentBlockID;
 
 	static void Setup() {
 		LOGGER.info("Initializing config..");
 
-		properties.addCategory("General")
-			.addEntry("cfgVersion", 6);
+		Toml props = new Toml("Aether Configs.toml");
+		assembleProperties(props);
 
-		//BLOCK ID
-		properties.addCategory(BlockIDs);
-		properties.addEntry(BlockIDs+".startingFrom", blockIDs);
-		List<Field> blockFields = Arrays.stream(RandomiteBlocks.class.getDeclaredFields()).filter((F)-> Block.class.isAssignableFrom(F.getType())).collect(Collectors.toList());
-		for (Field blockField : blockFields) {
-			properties.addEntry(BlockIDs + "." + blockField.getName(), blockIDs++);
-		}
+		cfg = new TomlConfigHandler(AetherMod.MOD_ID, props);
 
-		cfg = new TomlConfigHandler(MOD_ID, properties);
+		if (cfg.getConfigFile().exists()) cfg.loadConfig();
+		else {
+			try {
+				cfg.getConfigFile().createNewFile();
+			} catch (IOException e) {
+				throw new RuntimeException(e);
+			}
 
-		if (cfg.getConfigFile().exists()) {
-			cfg.loadConfig();
-		} else {
-			try {cfg.getConfigFile().createNewFile();} catch (IOException e) {throw new RuntimeException(e);}
 			cfg.writeConfig();
 		}
 
+		loadProperties();
+	}
+
+	private static void loadProperties() {
+		currentBlockID = BLOCK_ID_STARTING_FROM = cfgGetValueOrDefault(GeneralCategory + ".BLOCK_ID_STARTING_FROM", BLOCK_ID_STARTING_FROM);
+	}
+
+	private static void assembleProperties(Toml properties) {
+		properties.addCategory(GeneralCategory)
+			.addEntry("cfgVersion", 6)
+			.addEntry("BLOCK_ID_STARTING_FROM", BLOCK_ID_STARTING_FROM);
+	}
+
+	public static int blockID(String blockName) {
+		return currentBlockID++;
+	}
+
+	@SuppressWarnings("unchecked")
+	static <T> T cfgGetValueOrDefault(String key, T def) {
+		T res = null;
+
+		try {
+			if (def instanceof String) {
+				res = (T) cfg.getString(key);
+			} else if (def instanceof Integer) {
+				res = (T) Integer.valueOf(cfg.getInt(key));
+			} else if (def instanceof Long) {
+				res = (T) Long.valueOf(cfg.getLong(key));
+			} else if (def instanceof Boolean) {
+				res = (T) Boolean.valueOf(cfg.getBoolean(key));
+			} else if (def instanceof Double || def instanceof Float) {
+				double raw = cfg.getDouble(key);
+
+				if (def instanceof Float) res = (T) Float.valueOf((float) raw);
+				else res = (T) Double.valueOf(raw);
+			} else {
+				throw new RuntimeException("Invalid value type!");
+			}
+
+		} catch (NullPointerException ignored) {
+		}
+
+		if (res == null) {
+			LOGGER.warn("Failed to load \"{}\"! Assuming default...", key);
+			return def;
+		}
+
+		return res;
 	}
 }

@@ -8,16 +8,18 @@ import turniplabs.halplibe.util.RecipeEntrypoint;
 
 
 public class RandomiteMod implements ModInitializer, GameStartEntrypoint, RecipeEntrypoint {
-    public static final String MOD_ID = "randomite";
-    public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
-    @Override
-    public void onInitialize() {
-		new RandomiteBlocks().initializeBlocks();
-    }
+	public static final String MOD_ID = "randomite";
+	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
+
+	@Override
+	public void onInitialize() {
+		RandomiteBlocks.init();
+	}
 
 	@Override
 	public void beforeGameStart() {
 		LOGGER.info("Randomite initialized.");
+		RandomiteConfig.Setup();
 	}
 
 	@Override

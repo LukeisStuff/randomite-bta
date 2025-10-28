@@ -13,18 +13,16 @@ public class RandomiteModels implements ModelEntrypoint {
 	@Override
 	public void initBlockModels(BlockModelDispatcher dispatcher) {
 
-
-
 		dispatcher.addDispatch(new BlockModelStandard<>(RandomiteBlocks.ORE_RANDOMITE_STONE)
-			.setAllTextures(0, "randomite:block/randomitestone"));
+			.setAllTextures(0, "randomite:block/ore/randomite/stone"));
 		dispatcher.addDispatch(new BlockModelStandard<>(RandomiteBlocks.ORE_RANDOMITE_BASALT)
-			.setAllTextures(0, "randomite:block/randomitegranite"));
+			.setAllTextures(0, "randomite:block/ore/randomite/basalt"));
 		dispatcher.addDispatch(new BlockModelStandard<>(RandomiteBlocks.ORE_RANDOMITE_LIMESTONE)
-			.setAllTextures(0, "randomite:block/randomitelimestone"));
+			.setAllTextures(0, "randomite:block/ore/randomite/limestone"));
 		dispatcher.addDispatch(new BlockModelStandard<>(RandomiteBlocks.ORE_RANDOMITE_GRANITE)
-			.setAllTextures(0, "randomite:block/randomitegranite"));
+			.setAllTextures(0, "randomite:block/ore/randomite/granite"));
 		dispatcher.addDispatch(new BlockModelStandard<>(RandomiteBlocks.ORE_RANDOMITE_PERMAFROST)
-			.setAllTextures(0, "randomite:block/randomitepermafrost"));
+			.setAllTextures(0, "randomite:block/ore/randomite/permafrost"));
 
 	}
 
