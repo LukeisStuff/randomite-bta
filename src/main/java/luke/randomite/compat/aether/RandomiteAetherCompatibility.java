@@ -48,9 +48,7 @@ public class RandomiteAetherCompatibility implements PreLaunchEntrypoint, GameSt
 	private static void callInit(String classPath, String methodName) {
 		try {
 			Class.forName(classPath).getMethod(methodName).invoke(null);
-		}
-
-		catch (Exception e) {
+		} catch (Exception e) {
 			throw new RuntimeException(e);
 		}
 	}

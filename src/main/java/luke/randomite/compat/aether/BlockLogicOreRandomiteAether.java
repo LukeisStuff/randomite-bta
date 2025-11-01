@@ -7,13 +7,13 @@ import net.minecraft.core.block.material.Material;
 import net.minecraft.core.enums.EnumDropCause;
 import net.minecraft.core.item.ItemStack;
 import net.minecraft.core.world.World;
+import net.minecraft.core.world.generate.feature.WorldFeatureOre;
 import teamport.aether.items.AetherItems;
-import teamport.aether.world.feature.terrain.WorldFeatureAetherOre;
 
 import java.util.Random;
 
 public class BlockLogicOreRandomiteAether extends BlockLogic {
-	public static WorldFeatureAetherOre.OreMap variantMap = new WorldFeatureAetherOre.OreMap();
+	public static WorldFeatureOre.OreMap variantMap = new WorldFeatureOre.OreMap();
 
 	public BlockLogicOreRandomiteAether(Block<?> block, Block<?> parentBlock, Material material) {
 		super(block, material);

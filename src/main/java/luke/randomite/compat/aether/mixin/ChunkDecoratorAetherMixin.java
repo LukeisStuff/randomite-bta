@@ -16,6 +16,7 @@ import java.util.Random;
 
 @Mixin(value = ChunkDecoratorAether.class, remap = false)
 public class ChunkDecoratorAetherMixin {
+
 	@Shadow
 	@Final
 	private World world;
@@ -23,7 +24,7 @@ public class ChunkDecoratorAetherMixin {
 	@Unique
 	private static final WorldFeatureAetherOre ORE_RANDOMITE = new WorldFeatureAetherOre(BlockLogicOreRandomiteAether.variantMap, 8);
 
-	@Inject(method = "decorateWithOres(Ljava/util/Random;IIII)V", at = @At(value = "TAIL"))
+	@Inject(method = "decorateWithOres(Ljava/util/Random;IIII)V", at = @At(value = "TAIL"), remap = false)
 	public void addCustomOre(Random rand, int minY, int maxY, int worldX, int worldZ, CallbackInfo ci) {
 		int rangeY = maxY + 1 - minY;
 		float oreHeightModifier = (float) rangeY / 128.0F;
