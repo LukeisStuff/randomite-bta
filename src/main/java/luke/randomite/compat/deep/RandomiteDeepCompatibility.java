@@ -13,89 +13,87 @@ import turniplabs.halplibe.util.RecipeEntrypoint;
 
 public class RandomiteDeepCompatibility implements PreLaunchEntrypoint, GameStartEntrypoint, ModelEntrypoint, RecipeEntrypoint {
 
-	public static boolean IS_DEEP_LOADED = false;
+    public static boolean IS_DEEP_LOADED = false;
 
-	public static ModelEntrypoint modelEntryPointDelegate;
-	public static RecipeEntrypoint recipeEntrypointDelegate;
+    public static ModelEntrypoint modelEntryPointDelegate;
+    public static RecipeEntrypoint recipeEntrypointDelegate;
 
 
-	@Override
-	public void onPreLaunch() {
-		FabricLoader loader = FabricLoader.getInstance();
+    @Override
+    public void onPreLaunch() {
+        FabricLoader loader = FabricLoader.getInstance();
 
-		IS_DEEP_LOADED = loader.isModLoaded("deep");
+        IS_DEEP_LOADED = loader.isModLoaded("deep");
 
-		if (IS_DEEP_LOADED) {
+        if (IS_DEEP_LOADED) {
 
-			try {
-				modelEntryPointDelegate = (ModelEntrypoint) Class
-					.forName("luke.randomite.compat.deep.RandomiteDeepModels")
-					.getConstructor()
-					.newInstance();
+            try {
+                modelEntryPointDelegate = (ModelEntrypoint) Class
+                    .forName("luke.randomite.compat.deep.RandomiteDeepModels")
+                    .getConstructor()
+                    .newInstance();
 
-				recipeEntrypointDelegate = (RecipeEntrypoint) Class
-					.forName("luke.randomite.compat.deep.RandomiteDeepRecipes")
-					.getConstructor()
-					.newInstance();
-			} catch (Exception e) {
-				throw new RuntimeException(e);
-			}
-		}
-	}
+                recipeEntrypointDelegate = (RecipeEntrypoint) Class
+                    .forName("luke.randomite.compat.deep.RandomiteDeepRecipes")
+                    .getConstructor()
+                    .newInstance();
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
+        }
+    }
 
-	private static void callInit(String classPath, String methodName) {
-		try {
-			Class.forName(classPath).getMethod(methodName).invoke(null);
-		}
+    private static void callInit(String classPath, String methodName) {
+        try {
+            Class.forName(classPath).getMethod(methodName).invoke(null);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
 
-		catch (Exception e) {
-			throw new RuntimeException(e);
-		}
-	}
+    @Override
+    public void beforeGameStart() {
+        if (IS_DEEP_LOADED) {
+            callInit("luke.randomite.compat.deep.RandomiteDeepBlocks", "init");
+        }
+    }
 
-	@Override
-	public void beforeGameStart() {
-		if (IS_DEEP_LOADED) {
-			callInit("luke.randomite.compat.deep.RandomiteDeepBlocks", "init");
-		}
-	}
+    @Override
+    public void afterGameStart() {
+    }
 
-	@Override
-	public void afterGameStart() {
-	}
+    @Override
+    public void initBlockColors(BlockColorDispatcher dispatcher) {
+        if (IS_DEEP_LOADED) modelEntryPointDelegate.initBlockColors(dispatcher);
+    }
 
-	@Override
-	public void initBlockColors(BlockColorDispatcher dispatcher) {
-		if (IS_DEEP_LOADED) modelEntryPointDelegate.initBlockColors(dispatcher);
-	}
+    @Override
+    public void initBlockModels(BlockModelDispatcher dispatcher) {
+        if (IS_DEEP_LOADED) modelEntryPointDelegate.initBlockModels(dispatcher);
+    }
 
-	@Override
-	public void initBlockModels(BlockModelDispatcher dispatcher) {
-		if (IS_DEEP_LOADED) modelEntryPointDelegate.initBlockModels(dispatcher);
-	}
+    @Override
+    public void initItemModels(ItemModelDispatcher dispatcher) {
+        if (IS_DEEP_LOADED) modelEntryPointDelegate.initItemModels(dispatcher);
+    }
 
-	@Override
-	public void initItemModels(ItemModelDispatcher dispatcher) {
-		if (IS_DEEP_LOADED) modelEntryPointDelegate.initItemModels(dispatcher);
-	}
+    @Override
+    public void initEntityModels(EntityRenderDispatcher dispatcher) {
+        if (IS_DEEP_LOADED) modelEntryPointDelegate.initEntityModels(dispatcher);
+    }
 
-	@Override
-	public void initEntityModels(EntityRenderDispatcher dispatcher) {
-		if (IS_DEEP_LOADED) modelEntryPointDelegate.initEntityModels(dispatcher);
-	}
+    @Override
+    public void initTileEntityModels(TileEntityRenderDispatcher dispatcher) {
+        if (IS_DEEP_LOADED) modelEntryPointDelegate.initTileEntityModels(dispatcher);
+    }
 
-	@Override
-	public void initTileEntityModels(TileEntityRenderDispatcher dispatcher) {
-		if (IS_DEEP_LOADED) modelEntryPointDelegate.initTileEntityModels(dispatcher);
-	}
+    @Override
+    public void onRecipesReady() {
+        if (IS_DEEP_LOADED) recipeEntrypointDelegate.onRecipesReady();
+    }
 
-	@Override
-	public void onRecipesReady() {
-		if (IS_DEEP_LOADED) recipeEntrypointDelegate.onRecipesReady();
-	}
-
-	@Override
-	public void initNamespaces() {
-		if (IS_DEEP_LOADED) recipeEntrypointDelegate.initNamespaces();
-	}
+    @Override
+    public void initNamespaces() {
+        if (IS_DEEP_LOADED) recipeEntrypointDelegate.initNamespaces();
+    }
 }

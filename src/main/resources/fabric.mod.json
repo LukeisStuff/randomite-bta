@@ -1,53 +1,53 @@
 {
-	"schemaVersion": 1,
-	"id": "randomite",
-	"version": "${version}",
-	"name": "Randomite",
-	"description": "Adds in a new ore that gives out random items.",
-	"authors": [
-		"LukeisStuff"
-	],
-	"contact": {
-		"homepage": "",
-		"sources": ""
-	},
-	"icon": "icon.png",
-	"license": "CC0-1.0",
-	"environment": "*",
-	"entrypoints": {
-		"main": [
-			"luke.randomite.RandomiteMod"
-		],
-		"beforeGameStart": [
-			"luke.randomite.RandomiteMod",
-			"luke.randomite.compat.aether.RandomiteAetherCompatibility",
-			"luke.randomite.compat.deep.RandomiteDeepCompatibility"
-		],
-		"afterGameStart": [
-			"luke.randomite.RandomiteMod"
-		],
-		"recipesReady": [
-			"luke.randomite.RandomiteRecipes",
-			"luke.randomite.compat.aether.RandomiteAetherCompatibility",
-			"luke.randomite.compat.deep.RandomiteDeepCompatibility"
-		],
-		"initModels": [
-			"luke.randomite.RandomiteModels",
-			"luke.randomite.compat.aether.RandomiteAetherCompatibility",
-			"luke.randomite.compat.deep.RandomiteDeepCompatibility"
-		],
-		"preLaunch": [
-			"luke.randomite.compat.aether.RandomiteAetherCompatibility",
-			"luke.randomite.compat.deep.RandomiteDeepCompatibility"
-		]
-	},
-	"mixins": [
-		"randomite.mixins.json"
-	],
-	"depends": {
-		"minecraft": "*",
-		"fabricloader": ">=0.15.5"
-	},
-	"suggests": {
-	}
+  "schemaVersion": 1,
+  "id": "randomite",
+  "version": "${version}",
+  "name": "Randomite",
+  "description": "Adds in a new ore that gives out random items.",
+  "authors": [
+    "LukeisStuff"
+  ],
+  "contact": {
+    "homepage": "",
+    "sources": ""
+  },
+  "icon": "icon.png",
+  "license": "CC0-1.0",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "luke.randomite.RandomiteMod"
+    ],
+    "beforeGameStart": [
+      "luke.randomite.RandomiteMod",
+      "luke.randomite.compat.aether.RandomiteAetherCompatibility",
+      "luke.randomite.compat.deep.RandomiteDeepCompatibility"
+    ],
+    "afterGameStart": [
+      "luke.randomite.RandomiteMod"
+    ],
+    "recipesReady": [
+      "luke.randomite.RandomiteRecipes",
+      "luke.randomite.compat.aether.RandomiteAetherCompatibility",
+      "luke.randomite.compat.deep.RandomiteDeepCompatibility"
+    ],
+    "initModels": [
+      "luke.randomite.RandomiteModels",
+      "luke.randomite.compat.aether.RandomiteAetherCompatibility",
+      "luke.randomite.compat.deep.RandomiteDeepCompatibility"
+    ],
+    "preLaunch": [
+      "luke.randomite.compat.aether.RandomiteAetherCompatibility",
+      "luke.randomite.compat.deep.RandomiteDeepCompatibility"
+    ]
+  },
+  "mixins": [
+    "randomite.mixins.json"
+  ],
+  "depends": {
+    "minecraft": "*",
+    "fabricloader": ">=0.15.5"
+  },
+  "suggests": {
+  }
 }

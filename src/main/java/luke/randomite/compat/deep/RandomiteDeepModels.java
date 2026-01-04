@@ -8,28 +8,28 @@ import net.minecraft.client.render.item.model.ItemModelDispatcher;
 import turniplabs.halplibe.util.ModelEntrypoint;
 
 public class RandomiteDeepModels implements ModelEntrypoint {
-	@Override
-	public void initBlockModels(BlockModelDispatcher dispatcher) {
+    @Override
+    public void initBlockModels(BlockModelDispatcher dispatcher) {
 
-	}
+    }
 
-	@Override
-	public void initItemModels(ItemModelDispatcher dispatcher) {
+    @Override
+    public void initItemModels(ItemModelDispatcher dispatcher) {
 
-	}
+    }
 
-	@Override
-	public void initEntityModels(EntityRenderDispatcher dispatcher) {
+    @Override
+    public void initEntityModels(EntityRenderDispatcher dispatcher) {
 
-	}
+    }
 
-	@Override
-	public void initTileEntityModels(TileEntityRenderDispatcher dispatcher) {
+    @Override
+    public void initTileEntityModels(TileEntityRenderDispatcher dispatcher) {
 
-	}
+    }
 
-	@Override
-	public void initBlockColors(BlockColorDispatcher dispatcher) {
+    @Override
+    public void initBlockColors(BlockColorDispatcher dispatcher) {
 
-	}
+    }
 }
