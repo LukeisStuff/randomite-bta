@@ -22,7 +22,7 @@ public class ChunkDecoratorAetherMixin {
     private World world;
 
     @Unique
-    private static final WorldFeatureAetherOre ORE_RANDOMITE = new WorldFeatureAetherOre(BlockLogicOreRandomiteAether.variantMap, 8);
+    private static final WorldFeatureAetherOre ORE_RANDOMITE;
 
     @Inject(method = "decorateWithOres(Ljava/util/Random;IIII)V", at = @At(value = "TAIL"), remap = false)
     public void addCustomOre(Random rand, int minY, int maxY, int worldX, int worldZ, CallbackInfo ci) {
@@ -35,6 +35,10 @@ public class ChunkDecoratorAetherMixin {
             int z = worldZ + rand.nextInt(16);
             ORE_RANDOMITE.place(this.world, rand, x, y, z);
         }
+    }
+
+    static {
+        ORE_RANDOMITE = new WorldFeatureAetherOre(BlockLogicOreRandomiteAether.variantMap, 8);
     }
 
 }

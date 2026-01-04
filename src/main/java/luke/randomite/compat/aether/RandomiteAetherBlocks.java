@@ -33,7 +33,7 @@ public class RandomiteAetherBlocks {
 
         // Aether Randomite Ores
         ORE_RANDOMITE_HOLYSTONE = ore
-            .build("ore.randomite.holystone", "ore_randomite_holystone", RandomiteConfig.blockID("ORE_RANDOMITE_HOLYSTONE"), block -> new BlockLogicOreRandomiteAether(block, AetherBlocks.HOLYSTONE, Material.marble));
+            .build("ore.randomite.holystone", "ore_randomite_holystone", RandomiteConfig.blockID("ORE_RANDOMITE_HOLYSTONE"), block -> new BlockLogicOreRandomiteAether(block, AetherBlocks.COBBLE_HOLYSTONE, Material.stone));
 
         AetherPickaxeAccessor.getMiningLevels().put(ORE_RANDOMITE_HOLYSTONE, 1);
     }

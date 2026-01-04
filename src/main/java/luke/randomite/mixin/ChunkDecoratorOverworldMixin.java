@@ -24,7 +24,6 @@ public class ChunkDecoratorOverworldMixin {
 
     @Inject(method = "decorate(Lnet/minecraft/core/world/chunk/Chunk;)V", at = @At(value = "TAIL"))
     public void addCustomOre(Chunk chunk, CallbackInfo ci) {
-
         int chunkX = chunk.xPosition;
         int chunkZ = chunk.zPosition;
         int minY = this.world.getWorldType().getMinY();
@@ -41,7 +40,6 @@ public class ChunkDecoratorOverworldMixin {
             int j13 = z + rand.nextInt(16);
             (new WorldFeatureOre(BlockLogicOreRandomite.variantMap, 8)).place(this.world, rand, j7, k10, j13);
         }
-
     }
 
 }

@@ -5,11 +5,11 @@
   },
   "package": "luke.randomite.compat.aether.mixin",
   "compatibilityLevel": "JAVA_${java}",
-  "client": [
-  ],
-  "server": [],
   "mixins": [
     "AetherPickaxeAccessor",
     "ChunkDecoratorAetherMixin"
-  ]
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
 }
