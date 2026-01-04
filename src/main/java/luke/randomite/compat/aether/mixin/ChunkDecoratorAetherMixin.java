@@ -17,30 +17,24 @@ import java.util.Random;
 @Mixin(value = ChunkDecoratorAether.class, remap = false)
 public class ChunkDecoratorAetherMixin {
 
-	@Shadow
-	@Final
-	private World world;
+    @Shadow
+    @Final
+    private World world;
 
-	@Unique
-	private static final WorldFeatureAetherOre ORE_RANDOMITE = new WorldFeatureAetherOre(BlockLogicOreRandomiteAether.variantMap, 8);
+    @Unique
+    private static final WorldFeatureAetherOre ORE_RANDOMITE = new WorldFeatureAetherOre(BlockLogicOreRandomiteAether.variantMap, 8);
 
-	@Inject(method = "decorateWithOres(Ljava/util/Random;IIII)V", at = @At(value = "TAIL"), remap = false)
-	public void addCustomOre(Random rand, int minY, int maxY, int worldX, int worldZ, CallbackInfo ci) {
-		int rangeY = maxY + 1 - minY;
-		float oreHeightModifier = (float) rangeY / 128.0F;
+    @Inject(method = "decorateWithOres(Ljava/util/Random;IIII)V", at = @At(value = "TAIL"), remap = false)
+    public void addCustomOre(Random rand, int minY, int maxY, int worldX, int worldZ, CallbackInfo ci) {
+        int rangeY = maxY + 1 - minY;
+        float oreHeightModifier = (float) rangeY / 128.0F;
 
-		int x;
-		int y;
-		int z;
-		int generateChance;
-
-		for (generateChance = 0; generateChance < 17.5F * oreHeightModifier; ++generateChance) {
-			y = rand.nextInt(rangeY);
-			x = worldX + rand.nextInt(16);
-			z = worldZ + rand.nextInt(16);
-			ORE_RANDOMITE.place(this.world, rand, x, y, z);
-		}
-
-	}
+        for (int generateChance = 0; generateChance < 17.5F * oreHeightModifier; ++generateChance) {
+            int y = rand.nextInt(rangeY);
+            int x = worldX + rand.nextInt(16);
+            int z = worldZ + rand.nextInt(16);
+            ORE_RANDOMITE.place(this.world, rand, x, y, z);
+        }
+    }
 
 }

@@ -1,12 +1,12 @@
 {
   "required": true,
-  "minVersion": "0.8",
+  "mixinextras": {
+    "minVersion": "0.5.0"
+  },
   "package": "luke.randomite.mixin",
-  "compatibilityLevel": "JAVA_8",
+  "compatibilityLevel": "JAVA_${java}",
   "mixins": [
     "ChunkDecoratorOverworldMixin"
-  ],
-  "client": [
   ],
   "injectors": {
     "defaultRequire": 1
