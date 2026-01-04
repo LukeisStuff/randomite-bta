@@ -18,7 +18,7 @@ public class RandomiteConfig {
 
     public static int currentBlockID;
 
-    static void Setup() {
+    static void setup() {
         LOGGER.info("Initializing config..");
 
         Toml props = new Toml("Randomite Configs.toml");

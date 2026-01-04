@@ -9,5 +9,12 @@ tile.randomite.ore.randomite.granite.desc=A collection of random ores embedded i
 tile.randomite.ore.randomite.permafrost.name=Permafrost Randomite Ore
 tile.randomite.ore.randomite.permafrost.desc=A collection of random ores embedded in permafrost.
 
+tile.randomite.ore.randomite.abyssalrite.name=Abyssalrite Randomite Ore
+tile.randomite.ore.randomite.abyssalrite.desc=A collection of random ores embedded in abyssalrite.
+tile.randomite.ore.randomite.pearlstone.name=Pearlstone Randomite Ore
+tile.randomite.ore.randomite.pearlstone.desc=A collection of random ores embedded in pearlstone.
+tile.randomite.ore.randomite.peridotite.name=Peridotite Randomite Ore
+tile.randomite.ore.randomite.peridotite.desc=A collection of random ores embedded in peridotite.
+
 tile.aether.ore.randomite.holystone.name=Holystone Randomite Ore
 tile.aether.ore.randomite.holystone.desc=A collection of random ores embedded in holystone.

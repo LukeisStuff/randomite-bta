@@ -62,8 +62,8 @@ lwjgl {
 dependencies {
 	minecraft("::${libs.versions.bta.get()}")
 
-	compileOnly(libs.btwaila)
-	compileOnly(libs.commandly)
+    implementation(libs.btwaila)
+    implementation(libs.commandly)
 
 	runtimeOnly(libs.clientJar)
 	implementation(libs.loader)
@@ -71,13 +71,22 @@ dependencies {
 	implementation(libs.modMenu)
 	implementation(libs.legacyLwjgl)
 
-	implementation(libs.dragonfly)
-	implementation(libs.catalyst.core)
-	implementation(libs.catalyst.effects)
-	implementation(libs.uselessNumerical.get().let { "${it.group}:${it.name}:${it.version}-${libs.versions.bta.get()}" })
+    compileOnly(libs.dragonfly)
+    compileOnly(libs.catalyst.core)
+    compileOnly(libs.catalyst.effects)
+    compileOnly(libs.uselessNumerical.get().let { "${it.group}:${it.name}:${it.version}-${libs.versions.bta.get()}" })
+    compileOnly(libs.aether)
 
-    implementation(libs.aether)
-    implementation(libs.deep)
+    compileOnly(libs.deep)
+
+    runtimeOnly(libs.dragonfly)
+    runtimeOnly(libs.catalyst.core)
+    runtimeOnly(libs.catalyst.effects)
+    runtimeOnly(libs.uselessNumerical.get().let { "${it.group}:${it.name}:${it.version}-${libs.versions.bta.get()}" })
+    runtimeOnly(libs.aether)
+
+    runtimeOnly(libs.deep)
+
 
     implementation(libs.slf4jApi)
 	implementation(libs.guava)
