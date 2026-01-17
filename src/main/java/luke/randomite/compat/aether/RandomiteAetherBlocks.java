@@ -1,7 +1,6 @@
 package luke.randomite.compat.aether;
 
 import luke.randomite.RandomiteConfig;
-import luke.randomite.compat.aether.mixin.AetherPickaxeAccessor;
 import net.minecraft.core.block.Block;
 import net.minecraft.core.block.material.Material;
 import net.minecraft.core.block.tag.BlockTags;
@@ -9,6 +8,7 @@ import net.minecraft.core.sound.BlockSound;
 import teamport.aether.AetherMod;
 import teamport.aether.block.AetherBlockTags;
 import teamport.aether.block.AetherBlocks;
+import teamport.aether.item.item_tool.ItemToolPickaxeAether;
 import turniplabs.halplibe.helper.BlockBuilder;
 
 public class RandomiteAetherBlocks {
@@ -35,6 +35,6 @@ public class RandomiteAetherBlocks {
         ORE_RANDOMITE_HOLYSTONE = ore
             .build("ore.randomite.holystone", "ore_randomite_holystone", RandomiteConfig.blockID("ORE_RANDOMITE_HOLYSTONE"), block -> new BlockLogicOreRandomiteAether(block, AetherBlocks.COBBLE_HOLYSTONE, Material.stone));
 
-        AetherPickaxeAccessor.getMiningLevels().put(ORE_RANDOMITE_HOLYSTONE, 1);
+        ItemToolPickaxeAether.aetherMiningLevels.put(ORE_RANDOMITE_HOLYSTONE, 1);
     }
 }

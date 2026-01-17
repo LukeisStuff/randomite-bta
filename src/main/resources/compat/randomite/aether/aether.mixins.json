@@ -6,7 +6,6 @@
   "package": "luke.randomite.compat.aether.mixin",
   "compatibilityLevel": "JAVA_${java}",
   "mixins": [
-    "AetherPickaxeAccessor",
     "ChunkDecoratorAetherMixin"
   ],
   "injectors": {

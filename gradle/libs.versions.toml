@@ -38,7 +38,7 @@ dragonfly = "1.7.0-alpha.7"
 # Check this on https://github.com/Redart15/Commandly/releases/
 commandly = "1.1.3+7.3_04"
 # Check this on https://github.com/bta-team-port/better-with-aether/releases
-aether = "0.14.0+7.3_04"
+aether = "1.0.0+7.3_04"
 # Check this on https://modrinth.com/mod/deepbta
 deep = "1.5.1"
 ##########################################################################
