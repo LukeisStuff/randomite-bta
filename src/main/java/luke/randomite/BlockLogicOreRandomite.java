@@ -11,7 +11,7 @@ import net.minecraft.core.world.World;
 import net.minecraft.core.world.generate.feature.WorldFeatureOre;
 import silveon22.deep.item.DEEPItems;
 
-import static luke.randomite.compat.deep.RandomiteDeepCompatibility.IS_DEEP_LOADED;
+import static luke.randomite.compat.deep.RandomiteDeepMod.IS_DEEP_LOADED;
 
 public class BlockLogicOreRandomite extends BlockLogic {
     public static WorldFeatureOre.OreMap variantMap = new WorldFeatureOre.OreMap();

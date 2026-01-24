@@ -24,25 +24,25 @@
     ],
     "beforeGameStart": [
       "luke.randomite.RandomiteMod",
-      "luke.randomite.compat.aether.RandomiteAetherCompatibility",
-      "luke.randomite.compat.deep.RandomiteDeepCompatibility"
+      "luke.randomite.compat.aether.RandomiteAetherMod",
+      "luke.randomite.compat.deep.RandomiteDeepMod"
     ],
     "afterGameStart": [
       "luke.randomite.RandomiteMod"
     ],
     "recipesReady": [
       "luke.randomite.RandomiteRecipes",
-      "luke.randomite.compat.aether.RandomiteAetherCompatibility",
-      "luke.randomite.compat.deep.RandomiteDeepCompatibility"
+      "luke.randomite.compat.aether.RandomiteAetherMod",
+      "luke.randomite.compat.deep.RandomiteDeepMod"
     ],
     "initModels": [
       "luke.randomite.RandomiteModels",
-      "luke.randomite.compat.aether.RandomiteAetherCompatibility",
-      "luke.randomite.compat.deep.RandomiteDeepCompatibility"
+      "luke.randomite.compat.aether.RandomiteAetherClient",
+      "luke.randomite.compat.deep.RandomiteDeepClient"
     ],
     "preLaunch": [
-      "luke.randomite.compat.aether.RandomiteAetherCompatibility",
-      "luke.randomite.compat.deep.RandomiteDeepCompatibility"
+      "luke.randomite.compat.aether.RandomiteAetherMod",
+      "luke.randomite.compat.deep.RandomiteDeepMod"
     ]
   },
 
